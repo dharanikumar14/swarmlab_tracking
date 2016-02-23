@@ -1,0 +1,16 @@
+<launch>
+	<group ns="/camera">
+		<node name="Preprocess" type="image_proc" pkg="image_proc" >
+			<remap to="image" from="image_raw"/>
+		</node>
+		<node name="Tracking" type="ir-track_new.py" pkg="tracking" >
+			<param name="homography_file" value="$(find swarmlab_tracking)/common/homography.npy" type="str" />
+			<remap to="image_mono" from="image"/>
+		</node>
+	</group>
+	<node name="PoseEstimator" type="CopterPose.py" pkg="swarmlab_tracking" output="screen" ns="/copters/0">
+		<remap from="Marker0" to="/camera/Marker0"/>
+		<remap from="Marker1" to="/camera/Marker1"/>
+		<remap from="Marker2" to="/camera/Marker2"/>
+	</node>
+</launch>

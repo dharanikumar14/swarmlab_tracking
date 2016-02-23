@@ -1,0 +1,4 @@
+<launch>
+	<node name="replay" pkg="rosbag" type="play" args="-l $(find swarmlab_tracking)/bags/wall_test.bag"/>
+	<include file="$(find swarmlab_tracking)/launch/track.launch" />
+</launch>

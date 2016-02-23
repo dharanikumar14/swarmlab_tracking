@@ -1,0 +1,4 @@
+<launch>
+	<node name="camera" pkg="camera_pylon" type="cam_node"/>
+	<include file="$(find swarmlab_tracking)/launch/track.launch" />
+</launch>
