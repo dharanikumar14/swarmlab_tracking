@@ -34,6 +34,7 @@ class CopterPose(object):
 			n = dot(m2-m1, array([[0, 1], [-1, 0]])) - (m0-m1)
 		if(i==2):
 			n = dot(m0-m2, array([[0, 1], [-1, 0]])) - (m1-m2)
+		#print "i: %i, n: %f"%(i, norm(n))
 		if(norm(n)>5):
 			pose.theta = pose.theta - 90
 		self.pub.publish(pose)

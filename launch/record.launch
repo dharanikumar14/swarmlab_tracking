@@ -1,0 +1,5 @@
+<launch>
+	<arg name="bag_file"/>
+	<include file="$(find swarmlab_tracking)/launch/cam.launch" />
+	<node name="record" pkg="rosbag" type="record" args="-b 30000 --chunksize 30000 --lz4 /camera/image_mono /copters/0/pose -O $(find swarmlab_tracking)/bags/$(arg bag_file)"/>
+</launch>
