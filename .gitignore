@@ -1,2 +1,3 @@
 bags/*.bag
 *.sw?
+*.pyc
