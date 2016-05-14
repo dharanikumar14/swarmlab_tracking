@@ -1,4 +1,8 @@
 <launch>
-	<node name="camera" pkg="camera_pylon" type="cam_node"/>
-	<include file="$(find swarmlab_tracking)/launch/track.launch" />
+	<node name="camera" pkg="camera_pylon" type="cam_node">
+    <param name="ExposureTimeAbs" value="500"/> 
+    <param name="PixelFormat" value="Mono_8"/> 
+    <param name="FixedFrameRate" value="true"/> 
+    <param name="FrameRate" value="50.0"/> 
+  </node>
 </launch>

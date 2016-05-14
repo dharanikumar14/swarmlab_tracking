@@ -1,0 +1,4 @@
+<launch>
+	<include file="$(find swarmlab_tracking)/launch/cam.launch" />
+	<include file="$(find swarmlab_tracking)/launch/track.launch" />
+</launch>
