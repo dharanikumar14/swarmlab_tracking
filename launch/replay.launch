@@ -1,0 +1,7 @@
+<launch>
+  <arg name="bag_file"/>
+	<arg name="track_anew" default="true"/>
+	<node name="replay" pkg="rosbag" type="play" args="-l --clock $(find swarmlab_tracking)/bags/$(arg bag_file)_cam.bag" if="$(arg track_anew)"/>
+	<node name="replay" pkg="rosbag" type="play" args="-l --clock $(find swarmlab_tracking)/bags/$(arg bag_file).bag" unless="$(arg track_anew)"/>
+	<include file="$(find swarmlab_tracking)/launch/track.launch" if="$(arg track_anew)"/>
+</launch>
