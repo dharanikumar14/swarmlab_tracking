@@ -1,0 +1,4 @@
+<launch>
+	<node name="rviz" pkg="rviz"  type="rviz" args="-d $(find swarmlab_tracking)/common/rviz/copter.rviz"/>
+	<node name="rqt" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find swarmlab_tracking)/common/rqt/copter.perspective"/>
+</launch>
