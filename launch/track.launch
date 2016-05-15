@@ -5,13 +5,13 @@
 			<remap from="image_raw" to="image"/>
 		</node>
     <node name="tf_stupidity_fix" type="static_transform_publisher" pkg="tf" args="0 0 0 0 0 0 map tf_is_stupid 100"/>
-		<node name="Tracking" type="ir-track_new.py" pkg="tracking" output="screen" args="">
-			<param name="homography_file" value="$(find swarmlab_tracking)/common/homography.npy" type="str" />
+		<node name="Tracking" type="ir-track_new.py" pkg="tracking" args="--nodisplay">
+			<param name="homography_file" value="$(find swarmlab_tracking)/common/arena_new.npy" type="str" />
 			<param name="verbose" value="true"/>
-			<param name="debug_window" value="true"/>
-			<param name="expected_markers" value="3"/>
-      <param name="roi_size" value="15"/>
-      <param name="mean" value="0.25"/>
+			<param name="debug_window" value="false"/>
+			<param name="expected_leds" value="3"/>
+      <param name="roi_size" value="35"/>
+      <param name="treshold" value="16"/>
 			<remap to="image_mono" from="image"/>
 		</node>
 	</group>
