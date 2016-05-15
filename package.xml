@@ -40,7 +40,9 @@
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
-	<depend>geometry_msgs</depend>
+	<exec_depend>geometry_msgs</exec_depend>
+	<exec_depend>visualization_msgs</exec_depend>
+	<exec_depend>rospy</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
