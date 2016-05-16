@@ -11,6 +11,7 @@ Panels:
         - /Image1
         - /Marker1
         - /Marker1/Namespaces1
+        - /MarkerArray2
       Splitter Ratio: 0.5
     Tree Height: 1312
   - Class: rviz/Selection
@@ -29,7 +30,7 @@ Panels:
     Experimental: true
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: Image
 Visualization Manager:
   Class: ""
   Displays:
@@ -56,7 +57,7 @@ Visualization Manager:
       Marker Topic: /camera/markers
       Name: MarkerArray
       Namespaces:
-        {}
+        leds: true
       Queue Size: 100
       Value: true
     - Class: rviz/Image
@@ -76,7 +77,15 @@ Visualization Manager:
       Marker Topic: /copters/0/marker
       Name: Marker
       Namespaces:
-        {}
+        copters: true
+      Queue Size: 100
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /arena
+      Name: MarkerArray
+      Namespaces:
+        arena: true
       Queue Size: 100
       Value: true
   Enabled: true
@@ -95,23 +104,20 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Class: rviz/Orbit
-      Distance: 9.28979969
+      Angle: 4.70500135
+      Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
-      Focal Point:
-        X: -4.76837158e-07
-        Y: 0
-        Z: 0
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.380398005
+      Scale: 267.966949
       Target Frame: <Fixed Frame>
-      Value: Orbit (rviz)
-      Yaw: 0.775399923
+      Value: TopDownOrtho (rviz)
+      X: 0
+      Y: 0
     Saved: ~
 Window Geometry:
   Displays:
